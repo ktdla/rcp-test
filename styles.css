@@ -17,8 +17,10 @@ body {
   padding: 50px;
   width: 25%;
   margin: auto;
+  box-shadow: 0 2px 5px #9B9B9B;
 }
 
+/* Input effects */
 label {
   color: #4A4D4A;
   font-weight: 300;
@@ -27,32 +29,30 @@ label {
   top: 10px;
   transition: 0.2s all;
   font-size: 1.2em;
+  line-height: 1.2em;
 }
 
-button {
-  height: 70px;
-  width: 240px;
-  display: block;
-}
-
-.title {
+h2 {
   color: #EF2452;
   display: block;
   font-size: 2em;
   font-weight: 500;
-  margin-bottom: 60px;
   text-transform: uppercase;
+  margin: 0;
+  border-left: 5px solid #EF2452;
+  margin-left: -50px;
+  padding-left: 45px;
 }
 
-/* Input effects */
 .group { 
   position: relative; 
-  margin-bottom: 60px; 
+  margin-top: 60px;
+  height: 45px;
 }
 
 input {
   border: none;
-  border-bottom: 1px solid #EEE;
+  border-bottom: 1px solid #E1E0E1;
   color: #4A4D4A;
   display: block;
   font-size: 1.3em;
@@ -61,7 +61,7 @@ input {
   width: 100%;
   outline: 0;
 }
-input[type="password"] { font-size: .9em;  }
+input:focus[type="password"], input:valid[type="password"] { font-size: .9em;  }
 
 input:focus~label, input:valid~label {
   top: -20px;
@@ -77,7 +77,7 @@ input:focus~label, input:valid~label {
   width: 100%;
 }
 
-.bar:before, .bar:after {
+.bar:before {
   background: #EF2452; 
   content: '';
   bottom: 1px;
@@ -87,6 +87,62 @@ input:focus~label, input:valid~label {
   width: 0;
 }
 
-.bar:before { left: 50%; }
-.bar:after { right: 50%; }
-input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
+.bar:before { left: 0%; }
+input:focus~.bar:before, input:focus~.bar:after { width: 100%; }
+
+a {
+  font-size: 1.2em;
+  color: #E1E0E1;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 300;
+  margin-top: 50px;
+  display: block;
+}
+a:hover { color: #EF2452; }
+
+/* Button effets */
+.wrapper {
+  background-color: white;
+  border: 2px solid #EF2452;
+  display: block;
+  margin: 0 auto;
+  margin-top: 50px;
+  overflow: hidden;
+  padding: 20px;
+  width: 60%;
+  height: 20px;
+}
+.wrapper:hover { cursor: pointer; }
+.wrapper:hover .button-two:after {
+  transform: scale(1) translateZ(0);
+  transition: all 0.7s ease;
+}
+
+.button-two {
+  color: #EF2452;
+  font-size: 1.2em;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+.button-two i { display: none; }
+.button-two:hover {  color: white; }
+.button-two:hover span {display: none;}
+.button-two:hover i { display: block; }
+.button-two:after {
+  background-color: #EF2452;
+  border-radius: 50%;
+  content: "";
+  height: 0;
+  left: 50%;
+  margin: -75%;
+  object-fit: contain;
+  padding-top: 150%;
+  position: absolute;
+  top: 50%;
+  transform: scale(0) translateZ(0);
+  transition: all 0.2s ease;
+  width: 150%;
+  z-index: -1;
+}
