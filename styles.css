@@ -1,0 +1,92 @@
+html, body {
+  height:100%;
+  margin:0;
+  width:100%;
+}
+
+body {
+  background-image: url("images/background.jpg");
+  display: flex;
+  font-family: Roboto;
+  font-size: 16px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 50px;
+  width: 25%;
+  margin: auto;
+}
+
+label {
+  color: #4A4D4A;
+  font-weight: 300;
+  display: block;
+  position: absolute;
+  top: 10px;
+  transition: 0.2s all;
+  font-size: 1.2em;
+}
+
+button {
+  height: 70px;
+  width: 240px;
+  display: block;
+}
+
+.title {
+  color: #EF2452;
+  display: block;
+  font-size: 2em;
+  font-weight: 500;
+  margin-bottom: 60px;
+  text-transform: uppercase;
+}
+
+/* Input effects */
+.group { 
+  position: relative; 
+  margin-bottom: 60px; 
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid #EEE;
+  color: #4A4D4A;
+  display: block;
+  font-size: 1.3em;
+  font-weight: 300;
+  padding: 10px 0;
+  width: 100%;
+  outline: 0;
+}
+input[type="password"] { font-size: .9em;  }
+
+input:focus~label, input:valid~label {
+  top: -20px;
+  font-size: 1.1em;
+  font-weight: 300;
+  color: #B4B2B5;
+  border-bottom: 0;
+}
+
+.bar { 
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.bar:before, .bar:after {
+  background: #EF2452; 
+  content: '';
+  bottom: 1px;
+  height: 2px; 
+  position: absolute;
+  transition: 0.2s all;
+  width: 0;
+}
+
+.bar:before { left: 50%; }
+.bar:after { right: 50%; }
+input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
