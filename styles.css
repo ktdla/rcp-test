@@ -62,7 +62,6 @@ input {
   outline: 0;
 }
 input:focus[type="password"], input:valid[type="password"] { font-size: .9em;  }
-
 input:focus~label, input:valid~label {
   top: -20px;
   font-size: 1.1em;
@@ -102,9 +101,8 @@ a {
 a:hover { color: #EF2452; }
 
 /* Button effets */
-.wrapper {
+.button, .wrapper {
   background-color: white;
-  border: 2px solid #EF2452;
   display: block;
   margin: 0 auto;
   margin-top: 50px;
@@ -112,25 +110,31 @@ a:hover { color: #EF2452; }
   padding: 20px;
   width: 60%;
   height: 20px;
+  text-align: center;
+  font-size: 1.2em;
 }
+.button {
+  border: 2px solid #EEE;
+  color: #EEE;
+}
+.wrapper { border: 2px solid #EF2452; }
 .wrapper:hover { cursor: pointer; }
-.wrapper:hover .button-two:after {
+.wrapper .color.click:after {
   transform: scale(1) translateZ(0);
   transition: all 0.7s ease;
 }
 
-.button-two {
+.wrapper .color {
   color: #EF2452;
-  font-size: 1.2em;
   position: relative;
-  text-align: center;
   z-index: 2;
+  text-align: center;
 }
-.button-two i { display: none; }
-.button-two:hover {  color: white; }
-.button-two:hover span {display: none;}
-.button-two:hover i { display: block; }
-.button-two:after {
+.color i { display: none; }
+.color.click {  color: white; }
+.color.click span {display: none;}
+.color.click i { display: block; }
+.wrapper .color:after {
   background-color: #EF2452;
   border-radius: 50%;
   content: "";
