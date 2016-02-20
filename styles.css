@@ -9,8 +9,8 @@ body {
   display: flex;
   font-family: Roboto;
   font-size: 16px;
-  max-width: 1366px;
   margin: 0 auto;
+  max-width: 1366px;
 }
 
 .container {
@@ -22,33 +22,33 @@ body {
 .card {
   background-color: white;
   border-radius: 10px;
-  padding: 50px;
-  margin: auto;
   box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.25);
+  margin: auto;
+  padding: 50px;
 }
 
 /* Input effects */
 label {
   color: #4A4D4A;
-  font-weight: 300;
   display: block;
+  font-size: 1.2em;
+  font-weight: 300;
+  line-height: 1.2em;
   position: absolute;
   top: 10px;
   transition: 0.2s all;
-  font-size: 1.2em;
-  line-height: 1.2em;
 }
 
 h2 {
+  border-left: 5px solid #EF2452;
   color: #EF2452;
   display: block;
   font-size: 2em;
   font-weight: 500;
-  text-transform: uppercase;
   margin: 0;
-  border-left: 5px solid #EF2452;
   margin-left: -50px;
   padding-left: 45px;
+  text-transform: uppercase;
 }
 
 .menu-block h2 {
@@ -57,9 +57,9 @@ h2 {
 }
 
 .group { 
-  position: relative; 
-  margin-top: 60px;
   height: 45px;
+  margin-top: 60px;
+  position: relative; 
 }
 
 input {
@@ -73,7 +73,9 @@ input {
   width: 100%;
   outline: 0;
 }
+
 input:focus[type="password"], input:valid[type="password"] { font-size: .9em;  }
+
 input:focus~label, input:valid~label {
   top: -20px;
   font-size: 1.1em;
@@ -117,6 +119,7 @@ a {
   margin-top: 50px;
   display: block;
 }
+
 a:hover { color: #EF2452; }
 
 /* Button effects */
@@ -231,9 +234,7 @@ a:hover { color: #EF2452; }
   transform: scale(0.96) translateY(-18px);
   transition: all 0.1s ease;
 }
-.2 {
-  width: 330px !important;
-}
+
 /* Responsive */
 @media screen and (max-width: 1024px) {
   .container { width: 407px; }
@@ -244,10 +245,11 @@ a:hover { color: #EF2452; }
     padding: 30px;
     margin-right: -20px;
   }
-  .menu-block.menu-active {
-    width: 260px !important;
+  .menu-block.menu-active { width: 260px !important; }
+  .menu-small { width: 30px !important; }
+  .menu-block h2 {
+   margin-left: -30px;
+   padding-left: 25px;
   }
-  .menu-small {
-    width: 30px !important;
-  }
+  .menu-block.menu-active .bar { right: 30px; }
 }
