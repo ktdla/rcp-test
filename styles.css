@@ -17,7 +17,8 @@ body {
   padding: 50px;
   width: 25%;
   margin: auto;
-  box-shadow: 0 2px 5px #9B9B9B;
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.25);
+  position: relative;
 }
 
 /* Input effects */
@@ -42,6 +43,13 @@ h2 {
   border-left: 5px solid #EF2452;
   margin-left: -50px;
   padding-left: 45px;
+}
+
+.menu-block h2 {
+  color: white;
+  border-left: 5px solid white;
+  margin-left: -40px;
+  padding-left: 35px;
 }
 
 .group { 
@@ -69,6 +77,13 @@ input:focus~label, input:valid~label {
   color: #B4B2B5;
   border-bottom: 0;
 }
+
+.menu-block input {
+  background-color: #EF2452;
+  color: white;
+}
+
+.menu-block label { color: white; }
 
 .bar { 
   display: block;
@@ -117,6 +132,11 @@ a:hover { color: #EF2452; }
   border: 2px solid #EEE;
   color: #EEE;
 }
+.menu-block .button {
+  border: none;
+  color: #EF2452;
+  width: 90%;
+}
 .wrapper { border: 2px solid #EF2452; }
 .wrapper:hover { cursor: pointer; }
 .wrapper .color.click:after {
@@ -130,10 +150,17 @@ a:hover { color: #EF2452; }
   z-index: 2;
   text-align: center;
 }
-.color i { display: none; }
+
+.color i { 
+  display: none;
+  transform: rotate(45deg);
+}
 .color.click {  color: white; }
 .color.click span {display: none;}
-.color.click i { display: block; }
+.color.click i { 
+  display: block;
+  transform: rotate(0deg);
+}
 .wrapper .color:after {
   background-color: #EF2452;
   border-radius: 50%;
@@ -149,4 +176,49 @@ a:hover { color: #EF2452; }
   transition: all 0.2s ease;
   width: 150%;
   z-index: -1;
+}
+
+.menu-block {
+  background: #EF2452;
+  border-radius: 50%;
+  box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.6);
+  color: white;
+  cursor: pointer;
+  height: 30px;
+  margin: 40px -60px;
+  max-height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 50px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30px;
+  z-index: 1000;
+}
+.menu-block h2 {
+  margin-top: 100px;
+  transition: all 0.5s;
+}
+.menu-block.menu-active h2 {
+  margin-top: 0;
+}
+.menu-block .bar {
+  margin: 7px 0 0 2px;
+  transform-origin: 50% 50%;
+  width: 25px;
+  height: 25px;
+  position: relative;
+}
+.menu-block .bar .fa {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.menu-block.menu-active .bar {
+  position: absolute;
+  right: 50px;
+  transform: rotate(45deg);
+  transition: all 0.1s ease;
 }
